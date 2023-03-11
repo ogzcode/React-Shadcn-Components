@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/employee.css') }}"/>
+{% endblock %}
+
+{% block content %}
+<div class="emp">
+    <div class="emp__box">
+        <div class="box--header">
+            {% if emp.favorite == True %}
+                {% set bgColor = "yellow" %}
+            {% else %}
+                {% set bgColor = "" %}
+            {% endif %}
+
+            <form method="POST">
+                <button class="icon {{ bgColor }}" type="submit"><i class="fas fa-star"></i></button>
+            </form>
+            <form method="POST" action="{{ url_for('delete', id=emp.id) }}">
+                <button class="icon" type="submit"><i class="fas fa-trash"></i></button>
+            </form>
+        </div>
+        <div class="main">
+            <div class="image"><i class="fas fa-user"></i></div>
+            <p class="name">{{ emp.name }} {{ emp.surname }}</p>
+            <p class="job">{{ emp.job }}</p>
+        </div>
+        <div class="box--social">
+            <div class="social--icon"><i class="fab fa-facebook-messenger"></i></div>
+            <div class="social--icon"><i class="fab fa-telegram"></i></div>
+            <div class="social--icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="social--icon"><i class="fas fa-envelope"></i></div>
+        </div>
+        <div class="about">
+            <div class="email--box">
+                <label>Email</label>
+                <p>{{ emp.email }}</p>
+            </div>
+            <div class="phone--box">
+                <label>Phone</label>
+                <p>{{ emp.phone }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

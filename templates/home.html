@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+{% endblock %}
+
+{% block content %}
+<main>
+    {% for employee in employees %}
+    <div class="employee">
+        <div class="image">
+            <i class="fas fa-user"></i>
+        </div>
+        <a class="name" href="{{ url_for('user', id=employee['id']) }}">{{ employee["name"]}} {{ employee['surname']
+            }}</a>
+        <p class="job">{{ employee["job"]}}</p>
+    </div>
+    {% endfor %}
+
+    {% if not employees %}
+    <div class="empty__box">
+        <h1>Opps!! There's no one here</h1>
+        <p>Do you want to add someone new <a href="{{ url_for('add_employee') }}">Add New</a></p>
+    </div>
+    {% endif %}
+</main>
+{% endblock%}

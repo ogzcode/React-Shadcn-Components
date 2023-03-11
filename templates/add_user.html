@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/add.css') }}" />
+{% endblock %}
+
+{% block content %}
+<div class="form__container">
+    <form class="add__form" method="POST">
+        {{ form.csrf_token }}
+        <h1>Add New Employee</h1>
+        <label>Name</label>
+        {{ form.name() }}
+
+        <label>Surname</label>
+        {{ form.surname() }}
+
+        <label>Job</label>
+        {{ form.job() }}
+
+        <label>Email</label>
+        {{ form.email() }}
+
+        <label>Phone</label>
+        {{ form.phone() }}
+
+        <button type="submit">Add</button>
+    </form>
+</div>
+{% endblock %}

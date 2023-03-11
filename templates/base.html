@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    {% block style %}{% endblock %}
+</head>
+
+<body>
+    <header>
+        <h1 class="app__name">Employee App</h1>
+        <nav>
+            <a href="{{ url_for('home') }}"><i class="fas fa-book"></i> Home</a>
+            <a href="{{ url_for('favorites') }}"><i class="fas fa-bolt"></i> Favorites</a>
+            <a href="{{ url_for('add_employee') }}"><i class="fas fa-circle-plus"></i> Add New</a>
+        </nav>
+        <div class="contact">
+            <p>Contact with ogzCode</p>
+            <div class="contact__icon">
+                <a href="https://github.com/ogzcode"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/ogzCode"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/o%C4%9Fuzhan-g%C3%BC%C3%A7-327633193/"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </header>
+    {% block content %}{% endblock %}
+</body>
+
+</html>

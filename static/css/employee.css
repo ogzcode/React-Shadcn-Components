@@ -1,0 +1,144 @@
+.emp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emp__box {
+    width: 360px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, .1);
+    border-radius: 6px;
+}
+
+.box--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.icon i {
+    font-size: 24px;
+}
+
+.fa-star {
+    color: lightgray;
+}
+
+.fa-trash {
+    color: red;
+}
+
+.yellow i {
+    color:gold;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.image {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-bottom: .75rem;
+    border: 1px solid rgb(199, 199, 199);
+    display: grid;
+    place-content: center;
+}
+
+.image i {
+    font-size: 32px;
+    color: #494949;
+}
+
+
+.name {
+    font-size: 18px;
+    margin-bottom: .25rem;
+    color: #494949;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.job {
+    font-size: 16px;
+    color: #494949;
+    opacity: .6;
+}
+
+.box--social {
+    margin: 0 1rem;
+    box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, .1);
+    display: flex;
+    justify-content: space-around;
+    padding: .5rem 0;
+    border-radius: 32px;
+    margin-bottom: 2rem;
+}
+
+.social--icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    cursor: pointer;
+}
+
+.social--icon i {
+    font-size: 20px;
+    color: white;
+}
+
+.social--icon:nth-child(1) {
+    background-color:mediumblue;
+}
+
+.social--icon:nth-child(2) {
+    background-color:dodgerblue;
+}
+
+.social--icon:nth-child(3) {
+    background-color:chartreuse;
+}
+
+.social--icon:nth-child(4) {
+    background-color: red;
+}
+
+.about {
+    padding-left: 1rem;
+    padding-bottom: 2rem;
+}
+
+.email--box {
+    margin-bottom: 1rem;
+}
+
+.about label {
+    font-size: 16px;
+    color: #494949;
+    margin-bottom: .25rem;
+    display: block;
+}
+
+.about p {
+    font-size: 14px;
+    color: #494949;
+    opacity: .6;
+}
