@@ -1,0 +1,34 @@
+---
+title: Introduction
+description: React-Shadcn is a collection of reusable React components that can be used in your project.
+---
+
+React-Shadcn Extented, React ve shadcn-ui tabanlı projelerinizde kullanabileceğiniz yeniden kullanılabilir bileşenler koleksiyonudur. 
+Bu koleksiyon, shadcn-ui da eksik ve karmaşık bir takım bileşenleri daha basit şekilde oluşturulup kullanılması için geliştirilmiştir.
+
+## Karmaşık Bileşenlerin Basitleştirilmesi
+shadcn-ui koleksiyonundaki karmaşık bileşenler genellikle aşağıdaki gibi görünmektedir:
+    
+```jsx
+<Select>
+  <SelectTrigger className="w-[180px]">
+    <SelectValue placeholder="Theme" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="light">Light</SelectItem>
+    <SelectItem value="dark">Dark</SelectItem>
+    <SelectItem value="system">System</SelectItem>
+  </SelectContent>
+</Select>
+```
+Bu bileşenler bu şekilde karmaşık ve fazla kod tekrarına neden olmaktadır.
+Bu yüzden de günlük kullanıma uygun ve daha okunabilir kod için basit bir hale indirgemeye çalıştım.
+<br/>
+
+Bileşenleri oluştururken shadcn-ui ve react kullandım başka herhangi bir kütüphane kullanmadım.
+Bu sayede doğrudan shadcn-ui bileşenlerini kullanarak bu bileşenleri kodunuza entegre edebilirsiniz.
+
+## Eksik Bileşenlerin Oluşturulması
+
+Projede ihtiyaç duyduğunuz ancak shadcn-ui koleksiyonunda bulunmayan bileşenlerinde bir kısmını elimden geldiğince oluşturmaya çalıştım.
+Bunlar içinde yine shadcn-ui bileşenlerini kullanarak oluşturduğum bileşenler bulunmaktadır.
