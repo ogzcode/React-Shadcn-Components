@@ -13,6 +13,7 @@ export default defineConfig({
       discord: 'https://astro.build/chat',
       github: 'https://github.com/withastro/starlight',
     },
+    tableOfContents: false,
     sidebar: [
       {
         label: 'Introduction', link: '/'
