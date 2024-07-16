@@ -2,33 +2,82 @@
 title: Select Components
 description: React-Shadcn is a collection of reusable React components that can be used in your project.
 ---
+import Page from "../../../component-page/SelectPage"
 
-React-Shadcn Extented, React ve shadcn-ui tabanlı projelerinizde kullanabileceğiniz yeniden kullanılabilir bileşenler koleksiyonudur. 
-Bu koleksiyon, shadcn-ui da eksik ve karmaşık bir takım bileşenleri daha basit şekilde oluşturulup kullanılması için geliştirilmiştir.
-
-## Karmaşık Bileşenlerin Basitleştirilmesi
-shadcn-ui koleksiyonundaki karmaşık bileşenler genellikle aşağıdaki gibi görünmektedir:
-    
-```jsx
-<Select>
-  <SelectTrigger className="w-[180px]">
-    <SelectValue placeholder="Theme" />
-  </SelectTrigger>
-  <SelectContent>
-    <SelectItem value="light">Light</SelectItem>
-    <SelectItem value="dark">Dark</SelectItem>
-    <SelectItem value="system">System</SelectItem>
-  </SelectContent>
-</Select>
-```
-Bu bileşenler bu şekilde karmaşık ve fazla kod tekrarına neden olmaktadır.
-Bu yüzden de günlük kullanıma uygun ve daha okunabilir kod için basit bir hale indirgemeye çalıştım.
+Shadcn-ui için basitleştirilmiş `<Select />` bileşeni 
 <br/>
 
-Bileşenleri oluştururken shadcn-ui ve react kullandım başka herhangi bir kütüphane kullanmadım.
-Bu sayede doğrudan shadcn-ui bileşenlerini kullanarak bu bileşenleri kodunuza entegre edebilirsiniz.
+<Page client:only="react" />
 
-## Eksik Bileşenlerin Oluşturulması
 
-Projede ihtiyaç duyduğunuz ancak shadcn-ui koleksiyonunda bulunmayan bileşenlerinde bir kısmını elimden geldiğince oluşturmaya çalıştım.
-Bunlar içinde yine shadcn-ui bileşenlerini kullanarak oluşturduğum bileşenler bulunmaktadır.
+#### Requirements
+
+```
+npx shadcn-ui@latest add select
+```
+
+#### Code
+
+```jsx
+/* eslint-disable react/prop-types */
+
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
+
+
+export default function CustomSelect({ options, value, onChange, width, placeholder = "Select" }) {
+    const getValue = () => {
+        return options.length > 0 ? options.find((option) => option.value === value)?.label : placeholder
+    }
+
+    return (
+        <Select
+            value={value}
+            onValueChange={(value) => onChange(value)}
+        >
+            <SelectTrigger style={{ width: width }} >
+                <SelectValue placeholder={getValue()} />
+            </SelectTrigger>
+            <SelectContent>
+                {options.map((option) => (
+                    <SelectItem key={option.value} value={option.value}>
+                        {option.label}
+                    </SelectItem>
+                ))}
+            </SelectContent>
+        </Select>
+
+    )
+}
+```
+
+#### Usage
+
+```jsx
+import CustomSelect from "@/components/extra-ui/CustomSelect";
+import { useState } from "react";
+
+export default function Page() {
+    const [value, setValue] = useState('light');
+
+    return (
+        <div>
+            <CustomSelect
+                options={[
+                    { value: 'light', label: 'Light' },
+                    { value: 'dark', label: 'Dark' },
+                    { value: 'system', label: 'System' },
+                ]}
+                value={value}
+                onChange={(value) => setValue(value)}
+                width='200px'
+            />
+        </div>
+    );
+}
+```
