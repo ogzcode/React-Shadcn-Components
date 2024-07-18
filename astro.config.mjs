@@ -6,6 +6,8 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://github.com/ogzcode",
+  base: "/React-Shadcn-Components",
   integrations: [starlight({
     title: "React-Shadcn Extented",
     customCss: ['./src/tailwind.css'],
