@@ -4,33 +4,27 @@ description: React-Shadcn is a collection of reusable React components that can 
 ---
 import Page from "../../../component-page/MultiSelectTreePage"
 
-
-Shadcn-ui için geliştirilmiş `<MultiSelectTree />` bileşeni 
+Enhanced `<MultiSelectTree />` component for shadcn-ui
 <div className="mt-4 text-sm text-red-500 p-2 rounded-md bg-red-50">
-  <p><strong>Uyarı:</strong> Sadece tek bir alt children için çalışıyor. Birden fazla alt children için çalışmıyor.</p>
+  <p><strong>Warning:</strong> Works for only one level of children. Does not work for multiple levels of children.</p>
 </div>
 <br/>
 
 <Page client:only="react" />
 
 <div className="mt-4 text-sm text-red-500 p-2 rounded-md bg-red-50">
-  <p><strong>Uyarı:</strong> Checkbox Astro'dan dolayı çalışmıyor olabilir.</p>
+  <p><strong>Warning:</strong> The checkbox may not work due to Astro.</p>
 </div>
 
+## Requirements
 
-#### Requirements
-
-```
+```bash
 npx shadcn-ui@latest add button
 npx shadcn-ui@latest add checkbox
 npx shadcn-ui@latest add popover
 npx shadcn-ui@latest add accordion
 npx shadcn-ui@latest add scroll-area
-
 ```
-
-#### Code
-İlk önce `multi-select-tree` adında bir klasör oluşturun ve içerisine aşağıdaki bileşenleri ekleyin.
 
 ##### MultiSelectTree.jsx
 

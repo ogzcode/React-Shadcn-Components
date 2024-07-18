@@ -1,17 +1,16 @@
 ---
-title: Multiple Select Components
+title: Multiple Select
 description: React-Shadcn is a collection of reusable React components that can be used in your project.
 ---
 import Page from "../../../component-page/MultiSelectPage"
 
-
-Shadcn-ui için basitleştirilmiş `<Select />` bileşeni 
+Simplified `<Select />` component for shadcn-ui
 <br/>
 
 <Page client:only="react" />
 
-<div className="mt-4 text-xs text-red-500">
-  <p><strong>Uyarı:</strong> Select All için checkbox Astro'dan dolayı çalışmıyor olabilir.</p>
+<div className="mt-4 text-sm text-red-500 p-2 rounded-md bg-red-50">
+  <p><strong>Warning:</strong> The checkbox may not work due to Astro.</p>
 </div>
 
 
@@ -202,7 +201,7 @@ export default function Page() {
     ];
 
     return (
-        <div className="flex justify-center items-center border border-stone-300 min-h-40 rounded-md">
+        <div>
             <MultiSelect
                 options={options}
                 selectedList={selectedList}
